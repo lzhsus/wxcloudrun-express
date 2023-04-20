@@ -22,12 +22,15 @@ const Counter = sequelize.define('Counter', {
 const ApplyCarQrUserInfo = sequelize.define('ApplyCarQr', {
 	mobile: {
 	  type: DataTypes.INTEGER,
+	  defaultValue: 1,
   	},
 	openID: {
 		type: DataTypes.STRING,
+		defaultValue: "123",
 	},
 	name: {
 		type: DataTypes.STRING,
+		defaultValue: "lzh",
 	},
 },{
 	freezeTableName:true,
