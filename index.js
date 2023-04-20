@@ -2,7 +2,7 @@ const path = require('path');
 const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
-const { init: initDB, Counter } = require('./db');
+const { init: initDB, Counter,ApplyCarQrUserInfo } = require('./db');
 
 const logger = morgan('tiny');
 
@@ -41,6 +41,17 @@ app.get('/api/count', async (req, res) => {
     data: result,
   });
 });
+
+// create
+app.post('/api/apply-car-qr', async (req, res) => {
+  await ApplyCarQrUserInfo.create();
+  res.send({
+    code: 0,
+    data: {},
+  });
+});
+
+
 
 // 小程序调用，获取微信 Open ID
 app.get('/api/wx_openid', async (req, res) => {

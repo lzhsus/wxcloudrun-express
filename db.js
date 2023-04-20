@@ -19,6 +19,23 @@ const Counter = sequelize.define('Counter', {
 		defaultValue: 1,
 	},
 });
+const ApplyCarQrUserInfo = sequelize.define('Counter', {
+	member: {
+	  type: DataTypes.STRING,
+	  allowNull: false,
+	  defaultValue: '',
+  	},
+	openID: {
+		type: DataTypes.STRING,
+		allowNull: false,
+		defaultValue: '',
+	},
+	name: {
+		type: DataTypes.STRING,
+		allowNull: false,
+		defaultValue: '',
+	},
+});
 
 // 数据库初始化方法
 async function init() {
@@ -29,4 +46,5 @@ async function init() {
 module.exports = {
 	init,
 	Counter,
+	ApplyCarQrUserInfo
 };
