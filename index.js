@@ -44,10 +44,15 @@ app.get('/api/count', async (req, res) => {
 
 // create
 app.post('/api/apply-car-qr', async (req, res) => {
-  await ApplyCarQrUserInfo.create();
+  let data = {
+    mobile:15239371927,
+    name:"龙张海",
+    openID:req.headers['x-wx-openid']
+  }
+  await ApplyCarQrUserInfo.create(data);
   res.send({
     code: 0,
-    data: {},
+    data: data,
   });
 });
 

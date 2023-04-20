@@ -20,8 +20,8 @@ const Counter = sequelize.define('Counter', {
 	},
 });
 const ApplyCarQrUserInfo = sequelize.define('ApplyCarQr', {
-	member: {
-	  type: DataTypes.STRING,
+	mobile: {
+	  type: DataTypes.INTEGER,
 	  allowNull: false,
 	  defaultValue: '',
   	},
