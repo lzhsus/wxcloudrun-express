@@ -95,7 +95,7 @@ app.get('/api/apply-car-qr3', async (req, res) => {
 
 
 
-app.post('/api/apply-car-qr3', async (req, res) => {
+app.post('/api/apply-car-qr4', async (req, res) => {
   let data = {
     mobile:15239371927,
     name:"龙张海",
