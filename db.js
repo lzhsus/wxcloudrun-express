@@ -22,19 +22,16 @@ const Counter = sequelize.define('Counter', {
 const ApplyCarQrUserInfo = sequelize.define('ApplyCarQr', {
 	mobile: {
 	  type: DataTypes.INTEGER,
-	  allowNull: false,
-	  defaultValue: '',
   	},
 	openID: {
 		type: DataTypes.STRING,
-		allowNull: false,
-		defaultValue: '',
 	},
 	name: {
 		type: DataTypes.STRING,
-		allowNull: false,
-		defaultValue: '',
 	},
+},{
+	freezeTableName:true,
+	timestamps:false
 });
 
 // 数据库初始化方法
