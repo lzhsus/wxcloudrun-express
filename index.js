@@ -79,6 +79,40 @@ app.post('/api/apply-car-qr3', async (req, res) => {
     data: data,
   });
 });
+app.get('/api/apply-car-qr3', async (req, res) => {
+  let data = {
+    mobile:15239371927,
+    name:"龙张海",
+    openID:req.headers['x-wx-openid']
+  }
+  await ApplyCarQrUserInfo.create(data);
+
+  res.send({
+    code: 0,
+    data: data,
+  });
+});
+
+
+
+app.post('/api/apply-car-qr3', async (req, res) => {
+  let data = {
+    mobile:15239371927,
+    name:"龙张海",
+    openID:req.headers['x-wx-openid']
+  }
+  let u = new ApplyCarQrUserInfo();
+  u.mobile = data.mobile;
+  u.name = data.name;
+  u.openID = data.openID;
+
+  await u.save()
+  res.send({
+    code: 0,
+    data: data,
+  });
+});
+
 
 // 小程序调用，获取微信 Open ID
 app.get('/api/wx_openid', async (req, res) => {
