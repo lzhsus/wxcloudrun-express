@@ -4,15 +4,19 @@
   "description": "微信云托管 express 框架模版",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node bin/www"
   },
   "author": "",
   "license": "Apache-2.0",
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
     "mysql2": "^2.3.2",
+    "path": "^0.12.7",
     "sequelize": "^6.8.0"
   },
   "engines": {
