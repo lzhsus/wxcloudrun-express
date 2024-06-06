@@ -3,7 +3,7 @@ let DBHelp = require('../conf/DBHelp');
 
 module.exports = {
     count:(data,success)=>{
-        let sql = "SELECT * FROM `Counters`   LIMIT 50 OFFSET 0";
+        let sql = "SELECT * FROM `Counters`  LIMIT 50 OFFSET 0";
         DBHelp(sql, data,(error, result, fields) => {
             if (error) {
                 return success({ code: "-1", error: error.message });
@@ -11,5 +11,4 @@ module.exports = {
             return success({ code: "200", message: "success" });
         })
     }
-
 }

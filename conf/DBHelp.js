@@ -1,17 +1,17 @@
-//    conf/DBHelp.js
 let DB_MYSQL = require('mysql');
 let DB_CONFIG = require('./dbConfig');
 /**
  * 数据库连接池
  * @type { Pool }
  */
-let pool = DB_MYSQL.createPool({
+let database = {
     database: DB_CONFIG.database.DATABASE,
     user: DB_CONFIG.database.USERNAME,
     password: DB_CONFIG.database.PASSWORD,
     host: DB_CONFIG.database.HOST,
     port: DB_CONFIG.database.PORT
-});
+}
+let pool = DB_MYSQL.createPool(database);
 /**
  * 通用方法
  * @param sql
@@ -19,7 +19,6 @@ let pool = DB_MYSQL.createPool({
  * @param callback
  */
 let query = (sql, options, callback) => {
-    
     pool.getConnection((error, connection) => {
         if (error) {
             callback(error, null, null);
