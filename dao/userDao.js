@@ -4,8 +4,7 @@ let DBHelp = require('../conf/DBHelp');
 module.exports = {
     count:(data,success)=>{
         let sql = "SELECT * FROM `Counters`   LIMIT 50 OFFSET 0";
-        console.log('sql',sql)
-        DBHelp(sql, (error, result, fields) => {
+        DBHelp(sql, data,(error, result, fields) => {
             if (error) {
                 return success({ code: "-1", error: error.message });
             }

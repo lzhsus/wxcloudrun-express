@@ -6,14 +6,17 @@ const userDap = require("../dao/userDao")
 
 
 /* 登录 */
-router.post('/count', function (req, res) {
+router.get('/user/count', function (req, res) {
     const data = {    
         userName: req.body.userName,
     }
-    console.log(data)
-    userDap.count(data, content => {
-        res.json(content);
-    })
+    try {
+        userDap.count(data, content => {
+            res.json(content);
+        })
+    } catch (error) {
+        res.json(req.body);
+    }
 });
 
 module.exports = router;

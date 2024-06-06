@@ -15,6 +15,7 @@ const app = express();
 // 默认的json解析器
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
+
 app.use(cors());
 app.use(logger);
 
@@ -42,7 +43,7 @@ app.all('/*', function (req, res, next) {
 });
 // console.log(indexRouter)
 // 路由
-app.use('/', indexRouter);
+app.use('/api', indexRouter);
 
 // 首页
 // app.get("/", async (req, res) => {
@@ -94,7 +95,7 @@ app.use('/', indexRouter);
 app.use(function (err, req, res, next) {
 	// set locals, only providing error in development
 	res.locals.message = err.message;
-	res.locals.error = req.app.get('env') === 'development' ? err : {};
+	res.locals.error = err;
 
 	// render the error page
 	res.status(err.status || 500);

@@ -19,6 +19,7 @@ let pool = DB_MYSQL.createPool({
  * @param callback
  */
 let query = (sql, options, callback) => {
+    
     pool.getConnection((error, connection) => {
         if (error) {
             callback(error, null, null);
