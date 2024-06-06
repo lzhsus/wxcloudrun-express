@@ -8,7 +8,7 @@ module.exports = {
             if (error) {
                 return success({ code: "-1", error: error.message });
             }
-            return success({ code: "200", message: "success" });
+            return success({ code: "200", message: "success",env:process.env });
         })
     }
 }

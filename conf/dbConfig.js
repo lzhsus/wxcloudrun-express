@@ -9,10 +9,10 @@ const config = {
     port: port,
     database: {
         DATABASE: 'nodejs_demo',       //数据库名
-        USERNAME: MYSQL_USERNAME,           //用户
-        PASSWORD: MYSQL_PASSWORD,         //密码
-        HOST: host,          //ip
-        PORT: port,               //端口号
+        USERNAME: MYSQL_USERNAME||"root",           //用户
+        PASSWORD: MYSQL_PASSWORD||"RuzWZU5S",         //密码
+        HOST: host||"127.0.0.1",          //ip
+        PORT: port||80,               //端口号
         insecureAuth: true,
         useConnectionPooling: true,
         multipleStatements: true   
